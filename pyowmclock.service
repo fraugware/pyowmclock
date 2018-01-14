@@ -1,0 +1,15 @@
+[Unit]
+Description=Pi OpenWeatherMap Clock
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python -u pyowmclock.py $PYOWM_CLOCK_OPTS
+EnvironmentFile=/home/pi/pyowmclock/pyowmclock.env
+WorkingDirectory=/home/pi/pyowmclock
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

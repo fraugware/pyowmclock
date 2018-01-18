@@ -98,6 +98,14 @@ def _define_args():
         required=True,
     )
     parser.add_argument(
+        '--brightness',
+        nargs='?',
+        const=True,
+        default=15,
+        type=int,
+        help='LED Brightness (0-15)'
+    )
+    parser.add_argument(
         '--use_f',
         nargs='?',
         const=True,
@@ -127,9 +135,14 @@ def _define_args():
 def main():
     args = _define_args().parse_args()
 
+    brightness = args.brightness
+    if brightness not in range(0, 16):
+        brightness = 15
+
     print 'Initializing display ...'
     display = ClockDisplay()
     display.begin()
+    display.set_brightness(brightness)
 
     print 'Initializing temperature sensor ...'
     sensor = MCP9808.MCP9808()

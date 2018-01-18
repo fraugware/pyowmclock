@@ -32,7 +32,7 @@ The default NTP configuration should be good enough, but can be modified to spec
 
 ### OpenWeatherMap
 
-PyOWMClock uses [OpenWeatherMap](https://openweathermap.org) to retreive temperature data for our clock. An OWM API key will be required, but the free tier is sufficient.
+PyOWMClock uses [OpenWeatherMap](https://openweathermap.org) to retrieve temperature data for our clock. An OWM API key will be required, but the free tier is sufficient.
 
 The `pyowmclock.py` script uses the excellent OWM wrapper library, [PyOWM](https://github.com/csparpa/pyowm) and can be installed using `pip`.
 
